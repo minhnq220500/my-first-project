@@ -31,7 +31,7 @@ const LoginPage = (props: Props) => {
   };
 
   const handleLogin = useCallback(() => {
-    navigate("./dashboard");
+    navigate("./dashboard/shop");
   }, []);
   return (
     <div className={style.rectangle4}>
@@ -44,14 +44,16 @@ const LoginPage = (props: Props) => {
               size="middle"
               style={{
                 display: "flex",
-                flexDirection: "column",
+                // flexDirection: "column",
+                // justifyContent: "center",
+                alignItems: "center",
                 width: "100%",
                 height: "90%",
               }}
             >
               <div className={style.rectangle1}>
                 <div className={style.rectangle2}>
-                  <img src={Logo2} className={style.logo} alt="Norway" />
+                  <img src={Logo2} className={style.logo} alt="Any" />
                 </div>
               </div>
               <div className={style.rectangle3}>
@@ -87,12 +89,18 @@ const LoginPage = (props: Props) => {
                     Đăng nhập
                   </Button>
                 </div>
+
                 <div className={style.rectangleHotline}>
                   <Typography
                     style={{ textAlign: "center", color: "lightgray" }}
                   >
                     Nếu bạn có thắc mắc hay cần giải đáp, vui lòng liên hệ số
                     điện thoại: 19001000
+                  </Typography>
+                  <Typography
+                    style={{ textAlign: "center", color: "lightgray" }}
+                  >
+                    Bản quyền thuộc về AnyBim
                   </Typography>
                 </div>
               </div>

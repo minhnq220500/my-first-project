@@ -6,6 +6,9 @@ import { DashboardLayout } from "./features/Dashboard/dashboardRoot";
 
 const LoginPage = React.lazy(() => import("./features/Login/pages/Main"));
 const Shop = React.lazy(() => import("./features/Shop/pages/Main"));
+const PhoneDetail = React.lazy(
+  () => import("./features/Shop/pages/PhoneDetail")
+);
 const Cart = React.lazy(() => import("./features/Cart/pages/Main"));
 const MyProfile = React.lazy(() => import("./features/MyProfile/pages/Main"));
 
@@ -20,7 +23,7 @@ const router = createBrowserRouter([
     // errorElement: <NotFoundPage />,
     children: [
       { path: "shop", element: <Shop /> },
-      { path: "shop/:id", element: <Shop /> },
+      { path: "shop/:id", element: <PhoneDetail /> },
       { path: "cart", element: <Cart /> },
       { path: "my-profile", element: <MyProfile /> },
     ],
