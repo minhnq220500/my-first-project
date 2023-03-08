@@ -1,29 +1,17 @@
 import {
-  FilterOutlined,
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-  ShopOutlined,
-  ShoppingCartOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
-import {
   Breadcrumb,
   Col,
   Divider,
-  Input,
   Layout,
-  Menu,
   Row,
   Space,
   theme,
   Typography,
 } from "antd";
 import { Samsung } from "assets";
-import Star from "features/Shop/components/Star";
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import style from "./mystyle.module.css";
-const { Header, Sider, Content } = Layout;
+const { Content } = Layout;
 
 type Phone = {
   phoneId: string;
@@ -63,10 +51,7 @@ const Cart = (props: Props) => {
     token: { colorBgContainer },
   } = theme.useToken();
 
-  const navigate = useNavigate();
-
-  const { Title, Text } = Typography;
-  const { Search } = Input;
+  const { Title } = Typography;
 
   const handleOnClickPhone = (phoneId: string) => {
     console.log(phoneId);
@@ -151,9 +136,9 @@ const Cart = (props: Props) => {
                         }}
                       >
                         <Space size={"large"}>
-                          <p>+</p>
-                          <p>1</p>
-                          <p>-</p>
+                          <p className={style.textStyle}>+</p>
+                          <p className={style.textStyle}>1</p>
+                          <p className={style.textStyle}>-</p>
                         </Space>
                       </Space>
                     </div>

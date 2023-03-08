@@ -1,18 +1,10 @@
-import {
-  FilterOutlined,
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-  ShopOutlined,
-  ShoppingCartOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
+import { FilterOutlined } from "@ant-design/icons";
 import {
   Breadcrumb,
   Col,
   Divider,
   Input,
   Layout,
-  Menu,
   Row,
   Space,
   theme,
@@ -20,10 +12,10 @@ import {
 } from "antd";
 import { Samsung } from "assets";
 import Star from "features/Shop/components/Star";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./mystyle.module.css";
-const { Header, Sider, Content } = Layout;
+const { Content } = Layout;
 
 type Props = {};
 
@@ -87,7 +79,7 @@ const ShopPage = (props: Props) => {
 
   const navigate = useNavigate();
 
-  const { Title, Text } = Typography;
+  const { Title } = Typography;
   const { Search } = Input;
 
   const onSearch = (value: string) => console.log(value);

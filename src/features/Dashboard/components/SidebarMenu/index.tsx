@@ -1,15 +1,13 @@
 import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
   ShopOutlined,
   ShoppingCartOutlined,
   UserOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, Space, theme } from "antd";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./mystyle.module.css";
-const { Header, Sider, Content } = Layout;
+const { Sider } = Layout;
 
 type Props = {};
 

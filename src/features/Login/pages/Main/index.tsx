@@ -1,25 +1,16 @@
 import {
-  Row,
-  Col,
-  Space,
-  Card,
-  Input,
-  Checkbox,
-  Typography,
-  Button,
-} from "antd";
-import { Logo2 } from "assets";
-import {
   EyeInvisibleOutlined,
-  EyeTwoTone,
-  LockOutlined,
-  UserOutlined,
+  EyeTwoTone, UserOutlined
 } from "@ant-design/icons";
+import {
+  Button, Checkbox, Col, Input, Row, Space, Typography
+} from "antd";
 import type { CheckboxChangeEvent } from "antd/es/checkbox";
+import { Logo2 } from "assets";
 
-import React, { useCallback } from "react";
-import style from "./mystyle.module.css";
+import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+import style from "./mystyle.module.css";
 
 type Props = {};
 

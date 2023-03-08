@@ -1,32 +1,20 @@
-import {
-  FilterOutlined,
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-  ShopOutlined,
-  ShoppingCartOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
+import { ShoppingCartOutlined } from "@ant-design/icons";
 import {
   Breadcrumb,
   Button,
-  Col,
   Divider,
-  Input,
   Layout,
-  Menu,
-  Row,
   Space,
   theme,
   Typography,
 } from "antd";
 import { Capture1, Samsung } from "assets";
-import React, { useCallback, useEffect, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
-import style from "./mystyle.module.css";
-import { useParams } from "react-router-dom";
 import Star from "features/Shop/components/Star";
+import { useCallback, useEffect, useState } from "react";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
+import style from "./mystyle.module.css";
 
-const { Header, Sider, Content } = Layout;
+const { Content } = Layout;
 
 type Props = {};
 
@@ -43,12 +31,10 @@ const PhoneDetail = (props: Props) => {
   const param = useParams();
   console.log(param.id);
 
-  const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer },
   } = theme.useToken();
-  const { Title, Text } = Typography;
-  const { Search } = Input;
+  const { Title } = Typography;
 
   const navigate = useNavigate();
 

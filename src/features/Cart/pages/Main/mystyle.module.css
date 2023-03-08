@@ -1,34 +1,34 @@
-.main{
-  width:100%
+.main {
+  width: 100%;
 }
 
-.headerTitleAndNumber{
+.headerTitleAndNumber {
   display: flex;
-  width:100%;
+  width: 100%;
   height: 100px;
   justify-content: space-between;
 }
 
-.cartNumber{
-  display:flex;
+.cartNumber {
+  display: flex;
   justify-content: flex-end;
-  align-items:flex-end;
-  gap:10px
+  align-items: flex-end;
+  gap: 10px;
 }
 
-.phoneLayout{
+.phoneLayout {
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding-left: 50px;
 }
 
-.phoneImage{
+.phoneImage {
   width: 188px;
   height: 239px;
 }
 
-.informationTextLayout{
+.informationTextLayout {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -36,35 +36,38 @@
   width: 760px;
 }
 
-.column{
+.column {
   padding: 0 24px;
   font-size: 18px;
   line-height: 64px;
   cursor: pointer;
   transition: color 2s;
   border-radius: 20px;
-
 }
 
-.column:hover{
-  background-color:	#A9A9A9 ;
+.column:hover {
+  background-color: #a9a9a9;
 }
 
-.paymentLayout{
+.textStyle {
+  font: "Roboto";
+  fontweight: 400;
+  fontsize: "24px";
+  lineheight: "40px";
+}
+
+.paymentLayout {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
   width: 100%;
-  gap:20px
+  gap: 20px;
 }
 
-.payment{
-  display:'flex';
-  width:400px;
+.payment {
+  display: flex;
+  width: 400px;
   justify-content: space-between;
   align-items: center;
 }
-
-
-  
