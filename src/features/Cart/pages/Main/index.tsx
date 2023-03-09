@@ -60,7 +60,7 @@ const Cart = (props: Props) => {
 
   return (
     <div className={style.main}>
-      <Layout style={{ padding: "0 24px 24px" }}>
+      <Layout style={{ padding: "24px 24px" }}>
         <Content
           style={{
             padding: 24,

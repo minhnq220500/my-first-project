@@ -5,14 +5,16 @@ import {
   Divider,
   Input,
   Layout,
+  Modal,
   Row,
+  Select,
   Space,
   theme,
   Typography,
 } from "antd";
 import { Samsung } from "assets";
 import Star from "features/Shop/components/Star";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./mystyle.module.css";
 const { Content } = Layout;
@@ -71,6 +73,29 @@ const listPhone = [
     phoneImage: Samsung,
   },
 ];
+
+const moneyOptions = [
+  {
+    label: "0 VND",
+    value: "0",
+  },
+  {
+    label: "10 000 000 VND",
+    value: "10000000",
+  },
+];
+
+const starOptions = [
+  {
+    label: "0 Sao",
+    value: "0",
+  },
+  {
+    label: "5 Sao",
+    value: "5",
+  },
+];
+
 const ShopPage = (props: Props) => {
   const [collapsed, setCollapsed] = useState(false);
   const {
@@ -89,9 +114,39 @@ const ShopPage = (props: Props) => {
     navigate(`./${phoneId}`);
   };
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = useCallback(() => {
+    setIsModalOpen(true);
+  }, []);
+
+  const handleOk = useCallback(() => {
+    setIsModalOpen(false);
+  }, []);
+
+  const handleCancel = useCallback(() => {
+    setIsModalOpen(false);
+  }, []);
+
+  const handleChangeMoneyFrom = (value: string | string[]) => {
+    console.log(`Selected: ${value}`);
+  };
+
+  const handleChangeMoneyTo = (value: string | string[]) => {
+    console.log(`Selected: ${value}`);
+  };
+
+  const handleChangeStarFrom = (value: string | string[]) => {
+    console.log(`Selected: ${value}`);
+  };
+
+  const handleChangeStarTo = (value: string | string[]) => {
+    console.log(`Selected: ${value}`);
+  };
+
   return (
     <div className={style.main}>
-      <Layout style={{ padding: "0 24px 24px" }}>
+      <Layout style={{ padding: "24px 24px" }}>
         <Content
           style={{
             padding: 24,
@@ -117,7 +172,10 @@ const ShopPage = (props: Props) => {
             </Space>
             <div className={style.searchAndFilter}>
               <Search placeholder="Search..." onSearch={onSearch} enterButton />
-              <FilterOutlined style={{ fontSize: "200%" }} />
+              <FilterOutlined
+                style={{ fontSize: "200%" }}
+                onClick={showModal}
+              />
             </div>
           </div>
           <Divider />
@@ -149,6 +207,134 @@ const ShopPage = (props: Props) => {
           </Row>
         </Content>
       </Layout>
+      <Modal
+        title=""
+        open={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+      >
+        <div className={style.filterStyle}>
+          <p
+            style={{
+              fontStyle: "normal",
+              fontWeight: 700,
+              fontSize: "36px",
+              lineHeight: "16px",
+            }}
+          >
+            Filter
+          </p>
+
+          <div className={style.filterChildren}>
+            <div className={style.titleLayout}>
+              <div className={style.title}>
+                <p
+                  style={{
+                    fontStyle: "normal",
+                    fontWeight: 400,
+                    fontSize: "36px",
+                    lineHeight: "16px",
+                  }}
+                >
+                  Giá
+                </p>
+              </div>
+            </div>
+            <div className={style.keyValueLayout}>
+              <p
+                style={{
+                  fontStyle: "normal",
+                  fontWeight: 400,
+                  fontSize: "36px",
+                  lineHeight: "16px",
+                }}
+              >
+                Từ:
+              </p>
+              <Select
+                size={"large"}
+                defaultValue={moneyOptions[0].label}
+                onChange={handleChangeMoneyFrom}
+                style={{ width: 300 }}
+                options={moneyOptions}
+              />
+            </div>
+            <div className={style.keyValueLayout}>
+              <p
+                style={{
+                  fontStyle: "normal",
+                  fontWeight: 400,
+                  fontSize: "36px",
+                  lineHeight: "16px",
+                }}
+              >
+                Đến:
+              </p>
+              <Select
+                size={"large"}
+                defaultValue={moneyOptions[1].label}
+                onChange={handleChangeMoneyTo}
+                style={{ width: 300 }}
+                options={moneyOptions}
+              />
+            </div>
+          </div>
+          <div className={style.filterChildren}>
+            <div className={style.titleLayout}>
+              <div className={style.title}>
+                <p
+                  style={{
+                    fontStyle: "normal",
+                    fontWeight: 400,
+                    fontSize: "36px",
+                    lineHeight: "16px",
+                  }}
+                >
+                  Đánh giá
+                </p>
+              </div>
+            </div>
+            <div className={style.keyValueLayout}>
+              <p
+                style={{
+                  fontStyle: "normal",
+                  fontWeight: 400,
+                  fontSize: "36px",
+                  lineHeight: "16px",
+                }}
+              >
+                Từ:
+              </p>
+              <Select
+                size={"large"}
+                defaultValue={starOptions[0].label}
+                onChange={handleChangeStarFrom}
+                style={{ width: 300 }}
+                options={starOptions}
+              />
+            </div>
+            <div className={style.keyValueLayout}>
+              <p
+                style={{
+                  fontStyle: "normal",
+                  fontWeight: 400,
+                  fontSize: "36px",
+                  lineHeight: "16px",
+                }}
+              >
+                Đến:
+              </p>
+              <Select
+                size={"large"}
+                defaultValue={starOptions[1].label}
+                onChange={handleChangeStarTo}
+                style={{ width: 300 }}
+                options={starOptions}
+              />
+            </div>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 };
