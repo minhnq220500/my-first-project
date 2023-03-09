@@ -1,12 +1,12 @@
 import {
   EyeInvisibleOutlined,
-  EyeTwoTone, UserOutlined
+  EyeTwoTone,
+  UserOutlined,
 } from "@ant-design/icons";
-import {
-  Button, Checkbox, Col, Input, Row, Space, Typography
-} from "antd";
+import { Button, Checkbox, Col, Input, Row, Space, Typography } from "antd";
 import type { CheckboxChangeEvent } from "antd/es/checkbox";
 import { Logo2 } from "assets";
+import LoginForm from "features/Login/components/LoginForm";
 
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
@@ -21,8 +21,14 @@ const LoginPage = (props: Props) => {
     console.log(`checked = ${e.target.checked}`);
   };
 
-  const handleLogin = useCallback(() => {
+  const inititalValues = {
+    userName: "",
+    password: "",
+  };
+
+  const handleLogin = useCallback((values: any, actions: any) => {
     navigate("./dashboard/shop");
+    console.log(values);
   }, []);
   return (
     <div className={style.rectangle4}>
@@ -48,38 +54,10 @@ const LoginPage = (props: Props) => {
                 </div>
               </div>
               <div className={style.rectangle3}>
-                <Input
-                  size="large"
-                  placeholder="Tên đăng nhập"
-                  prefix={<UserOutlined />}
+                <LoginForm
+                  initialValues={inititalValues}
+                  onSubmit={handleLogin}
                 />
-                <Input.Password
-                  size="large"
-                  prefix={<UserOutlined />}
-                  placeholder="Mật khẩu"
-                  iconRender={(visible) =>
-                    visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
-                  }
-                />
-                <div className={style.rectangleLogin}>
-                  <Row>
-                    <Col span={8}>
-                      <Checkbox onChange={onChange} style={{ color: "white" }}>
-                        Lưu đăng nhập
-                      </Checkbox>
-                    </Col>
-
-                    <Col span={8} offset={8}>
-                      <Typography style={{ textAlign: "end", color: "white" }}>
-                        Bạn quên mật khẩu?
-                      </Typography>
-                    </Col>
-                  </Row>
-
-                  <Button block ghost size="large" onClick={handleLogin}>
-                    Đăng nhập
-                  </Button>
-                </div>
 
                 <div className={style.rectangleHotline}>
                   <Typography

@@ -1,4 +1,5 @@
 import {
+  LogoutOutlined,
   ShopOutlined,
   ShoppingCartOutlined,
   UserOutlined,
@@ -47,6 +48,11 @@ const SidebarMenu = (props: Props) => {
                 key: "/dashboard/my-profile",
                 icon: <UserOutlined />,
                 label: "My Profile",
+              },
+              {
+                key: "/",
+                icon: <LogoutOutlined />,
+                label: "Logout",
               },
             ]}
           />

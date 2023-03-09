@@ -136,9 +136,36 @@ const Cart = (props: Props) => {
                         }}
                       >
                         <Space size={"large"}>
-                          <p className={style.textStyle}>+</p>
-                          <p className={style.textStyle}>1</p>
-                          <p className={style.textStyle}>-</p>
+                          <p
+                            style={{
+                              font: "Roboto",
+                              fontWeight: 400,
+                              fontSize: "24px",
+                              lineHeight: "40px",
+                            }}
+                          >
+                            +
+                          </p>
+                          <p
+                            style={{
+                              font: "Roboto",
+                              fontWeight: 400,
+                              fontSize: "24px",
+                              lineHeight: "40px",
+                            }}
+                          >
+                            1
+                          </p>
+                          <p
+                            style={{
+                              font: "Roboto",
+                              fontWeight: 400,
+                              fontSize: "24px",
+                              lineHeight: "40px",
+                            }}
+                          >
+                            -
+                          </p>
                         </Space>
                       </Space>
                     </div>
@@ -150,11 +177,86 @@ const Cart = (props: Props) => {
           </Row>
           <div className={style.paymentLayout}>
             <div className={style.payment}>
-              <p>helol</p>
-              <p>helol</p>
+              <div className={style.paymentTitle}>
+                <p
+                  style={{
+                    font: "Roboto",
+                    fontStyle: "normal",
+                    fontWeight: 700,
+                    fontSize: "24px",
+                    lineHeight: "10px",
+                  }}
+                >
+                  SubTotal
+                </p>
+              </div>
+              <div className={style.paymentMoney}>
+                <p
+                  style={{
+                    font: "Roboto",
+                    fontWeight: 400,
+                    fontSize: "24px",
+                    lineHeight: "10px",
+                  }}
+                >
+                  13 880 000 VND
+                </p>
+              </div>
             </div>
-            <div className={style.Tax}>helol</div>
-            <div className={style.Total}>helol</div>
+            <div className={style.payment}>
+              <div className={style.paymentTitle}>
+                <p
+                  style={{
+                    font: "Roboto",
+                    fontStyle: "normal",
+                    fontWeight: 700,
+                    fontSize: "24px",
+                    lineHeight: "10px",
+                  }}
+                >
+                  Tax
+                </p>
+              </div>
+              <div className={style.paymentMoney}>
+                <p
+                  style={{
+                    font: "Roboto",
+                    fontWeight: 400,
+                    fontSize: "24px",
+                    lineHeight: "10px",
+                  }}
+                >
+                  1 388 000 VND
+                </p>
+              </div>
+            </div>
+            <div className={style.payment}>
+              <div className={style.paymentTitle}>
+                <p
+                  style={{
+                    font: "Roboto",
+                    fontStyle: "normal",
+                    fontWeight: 700,
+                    fontSize: "24px",
+                    lineHeight: "10px",
+                  }}
+                >
+                  Total
+                </p>
+              </div>
+              <div className={style.paymentMoney}>
+                <p
+                  style={{
+                    font: "Roboto",
+                    fontWeight: 400,
+                    fontSize: "24px",
+                    lineHeight: "10px",
+                  }}
+                >
+                  15 160 000 VND
+                </p>
+              </div>
+            </div>
           </div>
         </Content>
       </Layout>

@@ -49,20 +49,12 @@
   background-color: #a9a9a9;
 }
 
-.textStyle {
-  font: "Roboto";
-  fontweight: 400;
-  fontsize: "24px";
-  lineheight: "40px";
-}
-
 .paymentLayout {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
   width: 100%;
-  gap: 20px;
 }
 
 .payment {
@@ -70,4 +62,19 @@
   width: 400px;
   justify-content: space-between;
   align-items: center;
+}
+
+.paymentTitle{
+  display:flex;
+  width: 100px;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: end;
+}
+
+.paymentMoney{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  text-align: end;
 }
