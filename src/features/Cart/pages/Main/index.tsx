@@ -9,7 +9,6 @@ import {
   Typography,
 } from "antd";
 import { Samsung } from "assets";
-import { useState } from "react";
 import style from "./mystyle.module.css";
 const { Content } = Layout;
 
@@ -46,7 +45,6 @@ const listPhone = [
 type Props = {};
 
 const Cart = (props: Props) => {
-  const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer },
   } = theme.useToken();

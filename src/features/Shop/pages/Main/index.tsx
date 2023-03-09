@@ -97,7 +97,6 @@ const starOptions = [
 ];
 
 const ShopPage = (props: Props) => {
-  const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer },
   } = theme.useToken();
