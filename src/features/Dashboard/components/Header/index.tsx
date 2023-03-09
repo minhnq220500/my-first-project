@@ -3,7 +3,7 @@ import { Logo2, Vector } from "assets";
 import React from "react";
 import style from "./mystyle.module.css";
 
-export const Header = () => {
+export const HeaderComponent = () => {
   const { Title } = Typography;
   return (
     <Space

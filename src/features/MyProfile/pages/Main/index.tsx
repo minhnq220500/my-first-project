@@ -82,169 +82,159 @@ const MyProfile = (props: Props) => {
 
   return (
     <div className={style.main}>
-      <Layout style={{ padding: "0 24px 24px" }}>
-        <Content
+      <div className={style.headerTitle}>
+        <Space
           style={{
-            padding: 24,
-            margin: 0,
-            background: colorBgContainer,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            alignItems: "flex-start",
           }}
         >
-          <div className={style.headerTitle}>
-            <Space
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                alignItems: "flex-start",
-              }}
-            >
-              <Title level={3} style={{ fontWeight: "bold" }}>
-                My Profile
-              </Title>
-            </Space>
-          </div>
-          <Divider />
-          <Row>
-            <Col span={16}>
-              <div className={style.userInformationLayout}>
-                <div className={style.imageNameEmailLayout}>
-                  <div className={style.profileImageLayout}>
-                    <img
-                      src={Vector}
-                      className={style.profileImage}
-                      alt="User Profile"
-                    />
-                  </div>
-                  <div className={style.nameEmailLayout}>
-                    <p
-                      style={{
-                        fontStyle: "normal",
-                        fontWeight: 700,
-                        fontSize: "48px",
-                        lineHeight: "56px",
-                      }}
-                    >
-                      MR. USER
-                    </p>
-                    <p
-                      style={{
-                        fontStyle: "normal",
-                        fontWeight: 400,
-                        fontSize: "36px",
-                        lineHeight: "42px",
-                      }}
-                    >
-                      Email: user@gmail.com
-                    </p>
-                  </div>
-                </div>
-                <div className={style.basicInformationLayout}>
-                  <div className={style.titleLayout}>
-                    <p
-                      style={{
-                        fontStyle: "normal",
-                        fontWeight: 400,
-                        fontSize: "24px",
-                        lineHeight: "28px",
-                      }}
-                    >
-                      Date of birth:
-                    </p>
-                    <p
-                      style={{
-                        fontStyle: "normal",
-                        fontWeight: 400,
-                        fontSize: "24px",
-                        lineHeight: "28px",
-                      }}
-                    >
-                      Sex:
-                    </p>
-                    <p
-                      style={{
-                        fontStyle: "normal",
-                        fontWeight: 400,
-                        fontSize: "24px",
-                        lineHeight: "28px",
-                      }}
-                    >
-                      Address Company:
-                    </p>
-                    <p
-                      style={{
-                        fontStyle: "normal",
-                        fontWeight: 400,
-                        fontSize: "24px",
-                        lineHeight: "28px",
-                      }}
-                    >
-                      Address Home:
-                    </p>
-                  </div>
-                  <div className={style.informationLayout}>
-                    <p
-                      style={{
-                        fontStyle: "normal",
-                        fontWeight: 400,
-                        fontSize: "24px",
-                        lineHeight: "28px",
-                      }}
-                    >
-                      <DatePicker
-                        defaultValue={dayjs("01/01/2015", dateFormatList[0])}
-                        format={dateFormatList}
-                        size={"large"}
-                        style={{ width: 200 }}
-                      />
-                    </p>
-                    <p
-                      style={{
-                        fontStyle: "normal",
-                        fontWeight: 400,
-                        fontSize: "24px",
-                        lineHeight: "28px",
-                      }}
-                    >
-                      <Select
-                        size={"large"}
-                        defaultValue={sexOption[0].value}
-                        onChange={handleChange}
-                        style={{ width: 200 }}
-                        options={sexOption}
-                      />
-                    </p>
-
-                    <p
-                      style={{
-                        fontStyle: "normal",
-                        fontWeight: 400,
-                        fontSize: "24px",
-                        lineHeight: "28px",
-                        textDecoration: "underline",
-                      }}
-                    >
-                      15, Duy Tan, Dich Vong Hau, Cau Giay, Ha Noi
-                    </p>
-                    <p
-                      style={{
-                        fontStyle: "normal",
-                        fontWeight: 400,
-                        fontSize: "24px",
-                        lineHeight: "28px",
-                        textDecoration: "underline",
-                      }}
-                    >
-                      15, Duy Tan, Dich Vong Hau, Cau Giay, Ha Noi
-                    </p>
-                  </div>
-                </div>
+          <Title level={3} style={{ fontWeight: "bold" }}>
+            My Profile
+          </Title>
+        </Space>
+      </div>
+      <Divider />
+      <Row>
+        <Col span={16}>
+          <div className={style.userInformationLayout}>
+            <div className={style.imageNameEmailLayout}>
+              <div className={style.profileImageLayout}>
+                <img
+                  src={Vector}
+                  className={style.profileImage}
+                  alt="User Profile"
+                />
               </div>
-            </Col>
-            <Col span={8} />
-          </Row>
-        </Content>
-      </Layout>
+              <div className={style.nameEmailLayout}>
+                <p
+                  style={{
+                    fontStyle: "normal",
+                    fontWeight: 700,
+                    fontSize: "48px",
+                    lineHeight: "56px",
+                  }}
+                >
+                  MR. USER
+                </p>
+                <p
+                  style={{
+                    fontStyle: "normal",
+                    fontWeight: 400,
+                    fontSize: "36px",
+                    lineHeight: "42px",
+                  }}
+                >
+                  Email: user@gmail.com
+                </p>
+              </div>
+            </div>
+            <div className={style.basicInformationLayout}>
+              <div className={style.titleLayout}>
+                <p
+                  style={{
+                    fontStyle: "normal",
+                    fontWeight: 400,
+                    fontSize: "24px",
+                    lineHeight: "28px",
+                  }}
+                >
+                  Date of birth:
+                </p>
+                <p
+                  style={{
+                    fontStyle: "normal",
+                    fontWeight: 400,
+                    fontSize: "24px",
+                    lineHeight: "28px",
+                  }}
+                >
+                  Sex:
+                </p>
+                <p
+                  style={{
+                    fontStyle: "normal",
+                    fontWeight: 400,
+                    fontSize: "24px",
+                    lineHeight: "28px",
+                  }}
+                >
+                  Address Company:
+                </p>
+                <p
+                  style={{
+                    fontStyle: "normal",
+                    fontWeight: 400,
+                    fontSize: "24px",
+                    lineHeight: "28px",
+                  }}
+                >
+                  Address Home:
+                </p>
+              </div>
+              <div className={style.informationLayout}>
+                <p
+                  style={{
+                    fontStyle: "normal",
+                    fontWeight: 400,
+                    fontSize: "24px",
+                    lineHeight: "28px",
+                  }}
+                >
+                  <DatePicker
+                    defaultValue={dayjs("01/01/2015", dateFormatList[0])}
+                    format={dateFormatList}
+                    size={"large"}
+                    style={{ width: 200 }}
+                  />
+                </p>
+                <p
+                  style={{
+                    fontStyle: "normal",
+                    fontWeight: 400,
+                    fontSize: "24px",
+                    lineHeight: "28px",
+                  }}
+                >
+                  <Select
+                    size={"large"}
+                    defaultValue={sexOption[0].value}
+                    onChange={handleChange}
+                    style={{ width: 200 }}
+                    options={sexOption}
+                  />
+                </p>
+
+                <p
+                  style={{
+                    fontStyle: "normal",
+                    fontWeight: 400,
+                    fontSize: "24px",
+                    lineHeight: "28px",
+                    textDecoration: "underline",
+                  }}
+                >
+                  15, Duy Tan, Dich Vong Hau, Cau Giay, Ha Noi
+                </p>
+                <p
+                  style={{
+                    fontStyle: "normal",
+                    fontWeight: 400,
+                    fontSize: "24px",
+                    lineHeight: "28px",
+                    textDecoration: "underline",
+                  }}
+                >
+                  15, Duy Tan, Dich Vong Hau, Cau Giay, Ha Noi
+                </p>
+              </div>
+            </div>
+          </div>
+        </Col>
+        <Col span={8} />
+      </Row>
     </div>
   );
 };
